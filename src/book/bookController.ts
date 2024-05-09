@@ -44,17 +44,17 @@ const createBook = async (req: Request, res: Response, next: NextFunction) => {
 
     console.log("bookFileUploadResult", bookFileUploadResult);
     console.log("uploadResult", uploadResult);
-
+    // @ts-ignore
+    console.log("userId", req.userId);
     const newBook = await bookModel.create({
       title,
       genre,
-      author: "6636761f0eb9d3c980e79319",
+      author: "6613cc48ca90637df394b931",
       coverImage: uploadResult.secure_url,
       file: bookFileUploadResult.secure_url,
     });
 
     // Delete temp.files
-
     // todo: wrap in try catch...
     await fs.promises.unlink(filePath);
     await fs.promises.unlink(bookFilePath);

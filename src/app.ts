@@ -3,7 +3,7 @@ import cors from "cors";
 import globalErrorHandler from "./middlewares/globalErrorHandler";
 import userRouter from "./user/userRouter";
 import bookRouter from "./book/bookRouter";
-import { config } from "./config/config";
+// import { config } from "./config/config";
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://elib-frontend.vercel.app/",
-      "https://elib-dashboard.onrender.com", // Add this line
+      "https://elib-dashboard.onrender.com",
     ],
     credentials: true,
   })

@@ -8,13 +8,14 @@ const cors_1 = __importDefault(require("cors"));
 const globalErrorHandler_1 = __importDefault(require("./middlewares/globalErrorHandler"));
 const userRouter_1 = __importDefault(require("./user/userRouter"));
 const bookRouter_1 = __importDefault(require("./book/bookRouter"));
+// import { config } from "./config/config";
 const app = (0, express_1.default)();
 // Update the cors middleware to include https://elib-dashboard.onrender.com in the allowed origins
 app.use((0, cors_1.default)({
     origin: [
         "http://localhost:5173",
         "https://elib-frontend.vercel.app/",
-        "https://elib-dashboard.onrender.com", // Add this line
+        "https://elib-dashboard.onrender.com",
     ],
     credentials: true,
 }));

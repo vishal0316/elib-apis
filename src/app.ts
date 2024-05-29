@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://elib-frontend.vercel.app/",
+      "https://elib-frontend.vercel.app",
       "https://elib-dashboard.onrender.com",
     ],
     credentials: true,

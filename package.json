@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.ts"
+    "dev": "nodemon server.ts",
+    "build": "tsc",
+    "docker:publish": "docker build -t vr987195/elib-apis:v2 --platform linux/amd64 . && docker push vr987195/elib-apis:v2"
   },
   "keywords": [
     "rest",

@@ -7,9 +7,14 @@ import { config } from "./config/config";
 
 const app = express();
 
+// Update the cors middleware to include https://elib-dashboard.onrender.com in the allowed origins
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://elib-frontend.vercel.app/"],
+    origin: [
+      "http://localhost:5173",
+      "https://elib-frontend.vercel.app/",
+      "https://elib-dashboard.onrender.com", // Add this line
+    ],
     credentials: true,
   })
 );
@@ -20,7 +25,8 @@ app.use(express.json());
 // Http methods: GET, POST, PUT, PATCH, DELETE
 app.get("/", (req, res, next) => {
   res.json({ message: "Welcome to elib apis" });
-  res.header("Access-Control-Allow-Origin", "*");
+  // Remove the following line as it's redundant when using cors middleware
+  // res.header("Access-Control-Allow-Origin", "*");
 });
 
 app.use("/api/users", userRouter);

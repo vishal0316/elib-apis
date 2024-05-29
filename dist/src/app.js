@@ -8,10 +8,10 @@ const cors_1 = __importDefault(require("cors"));
 const globalErrorHandler_1 = __importDefault(require("./middlewares/globalErrorHandler"));
 const userRouter_1 = __importDefault(require("./user/userRouter"));
 const bookRouter_1 = __importDefault(require("./book/bookRouter"));
-const config_1 = require("./config/config");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: config_1.config.frontendDomain,
+    origin: ["http://localhost:5173", "https://elib-frontend.vercel.app/"],
+    credentials: true,
 }));
 app.use(express_1.default.json());
 // Routes

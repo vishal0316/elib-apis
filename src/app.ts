@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://elib-dashboard.onrender.com"],
+    origin: ["http://localhost:5173", "https://elib-frontend.vercel.app/"],
     credentials: true,
   })
 );
